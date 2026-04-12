@@ -93,8 +93,8 @@ The architecture enables **parallel analysis pipelines**, allowing comparison be
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Arguformer.git
-cd AI_Debate_Analyzer
+git clone https://github.com/Atim45/ArguFormer.git
+cd ArguFormer
 ```
 
 ### 2. Install Dependencies
@@ -103,21 +103,11 @@ cd AI_Debate_Analyzer
 pip install -r requirements.txt
 ```
 
-Required packages include:
-
-```
-transformers
-torch
-pandas
-scikit-learn
-```
-
-### 3. Run the Analyzer
+### 3. Run the Project
 
 ```bash
 python main.py
 ```
-
 Example input debate:
 
 ```
