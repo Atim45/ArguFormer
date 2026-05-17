@@ -147,7 +147,13 @@ AI_Debate_Analyzer/
 │
 ├── docs/
 │   └── architecture.png            # System architecture diagram
-│
+│──cli/
+│  └──args.py                       # argparse CLI
+│──utils/
+│  ├──exceptions.py                 # Passing the exceptions
+│  └──logger.py                     # Generates log files
+│──logs/                            # Contains log files
+
 ├── main.py                         # Project entry point
 ├── requirements.txt                # Project dependencies
 ├── README.md                       # Project documentation
