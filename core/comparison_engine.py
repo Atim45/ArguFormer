@@ -1,16 +1,12 @@
 import os
 import pandas as pd
 
-from core.speaker_segmentation import segment
+from core.segmentation import segment
 from core.traditional_model import traditional_fallacy
 from core.transformer_model import transformer_analysis
 
 
-def analyze_debate(debate, output_path="outputs/debate_analysis.csv"):
-
-    output_dir = os.path.dirname(output_path)
-    if output_dir:
-        os.makedirs(output_dir, exist_ok=True)
+def analyze_debate(debate):
 
     segments = segment(debate)
 
@@ -43,9 +39,6 @@ def analyze_debate(debate, output_path="outputs/debate_analysis.csv"):
 
     df = pd.DataFrame(results)
 
-    if output_path.lower().endswith(".json"):
-        df.to_json(output_path, orient="records", indent=2)
-    else:
-        df.to_csv(output_path, index=False)
+    df.to_csv("outputs/debate_analysis.csv", index=False)
 
     return df
