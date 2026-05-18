@@ -1,0 +1,23 @@
+project:
+  name: ArguFormer V2
+  version: 2.0
+
+paths:
+  outputs: outputs/
+  logs: logs/
+  datasets: datasets/
+
+models:
+  sentiment: distilbert-base-uncased-finetuned-sst-2-english
+  toxicity: unitary/toxic-bert
+  fallacy: q3fer/distilbert-base-fallacy-classification
+
+thresholds:
+  toxicity: 0.70
+  confidence: 0.65
+
+language:
+  default: auto
+  supported:
+    - en
+    - hi

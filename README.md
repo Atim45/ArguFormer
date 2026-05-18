@@ -1,5 +1,6 @@
 
 # ArguFormer
+## v2 in progress
 
 ArgueFromer is a **NLP system for analyzing debate transcripts** using both **traditional machine learning** and **modern transformer models**, enabling comparative analysis of argumentative language.
 
@@ -131,35 +132,44 @@ Speaker A Think about the poor children    POSITIVE    non-toxic  Appeal to Emot
 # Project Structure
 
 ```
-AI_Debate_Analyzer/
+arguformer/
+
+├── cli/
+│   ├── __init__.py
+│   └── args.py
 
 ├── core/
-│   ├── speaker_segmentation.py     # Extracts speakers and statements from transcripts
-│   ├── traditional_model.py        # TF-IDF + Logistic Regression fallacy classifier
-│   ├── transformer_model.py        # HuggingFace transformer models
-│   ├── comparison_engine.py        # Runs V1 and V2 models and compares outputs
-│
-├── data/
-│   └── sample_debates.txt          # Example debate transcripts
-│
+│   ├── __init__.py
+│   ├── preprocessing.py
+│   ├── segmentation.py
+│   └── comparison_engine.py
+
+├── models/
+│   ├── __init__.py
+│   ├── fallacy_lr.py
+│   ├── fallacy_transformer.py
+│   └── manager.py   ← soon
+
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py
+│   ├── exceptions.py
+│   └── config_loader.py
+
+├── configs/
+│   └── default.yaml
+
+├── datasets/
+├── evaluation/
+├── logs/
 ├── outputs/
-│   └── debate_analysis.csv         # Saved analysis results
-│
-├── docs/
-│   └── architecture.png            # System architecture diagram
-│──cli/
-│  └──args.py                       # argparse CLI
-│──utils/
-│  ├──exceptions.py                 # Passing the exceptions
-│  └──logger.py                     # Generates log files
-│──logs/                            # Contains log files
+├── tests/
+├── rag/
 
-├── main.py                         # Project entry point
-├── requirements.txt                # Project dependencies
-├── README.md                       # Project documentation
-└── LICENSE
-```
-
+├── main.py
+├── requirements.txt
+├── README.md
+└── .gitignore
 ---
 
 # Technologies Used
