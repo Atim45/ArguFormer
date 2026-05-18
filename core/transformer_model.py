@@ -1,3 +1,6 @@
+import os
+os.environ["DISABLE_SAFETENSORS_CONVERSION"] = "1"
+
 from transformers import pipeline
 
 sentiment_model = pipeline(

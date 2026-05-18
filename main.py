@@ -1,4 +1,10 @@
+import sys
+
 from core.comparison_engine import analyze_debate
+from cli.args import get_args
+from utils.logger import get_logger
+
+logger = get_logger()
 
 debate = """
 Speaker A: You are the dumbest person alive
@@ -43,9 +49,6 @@ Speaker B: Point out exactly where instead of making vague claims
 Speaker A: This will destroy our future generations
 Speaker B: Again, that's emotional exaggeration without proof
 """
-
-result = analyze_debate(debate)
-
 try:
     result = analyze_debate(debate)
     logger.info("Debate analysis completed successfully")
