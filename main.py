@@ -46,4 +46,10 @@ Speaker B: Again, that's emotional exaggeration without proof
 
 result = analyze_debate(debate)
 
-print(result)
+try:
+    result = analyze_debate(debate)
+    logger.info("Debate analysis completed successfully")
+    print(result)
+
+except Exception as e:
+    logger.error(f"Pipeline failed: {str(e)}")
